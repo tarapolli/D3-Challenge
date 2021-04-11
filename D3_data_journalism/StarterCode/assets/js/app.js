@@ -65,7 +65,7 @@ console.log(healthData);
     .attr("cx", d => xLinearScale(d.poverty))
     .attr("cy", d => yLinearScale(d.healthcare))
     .attr("r", "15")
-    .attr("fill", "pink")
+    .attr("fill", "blue")
     .attr("opacity", ".5")
     // .append("text")
     // .text((d)=>(d.abbr));
@@ -78,7 +78,11 @@ svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatt
        .append("text")
        .text((d) => (d.abbr))
        .attr("x", (d) => xLinearScale(d.poverty))
-       .attr("y", (d) => yLinearScale(d.healthcare));   
+       .attr("y", (d) => yLinearScale(d.healthcare));
+      //  .offset([80, -60]);   
+
+
+
 
 
     // Step 6: Initialize tool tip
@@ -107,8 +111,8 @@ svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatt
     // Create axes labels
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left + 40)
-      .attr("x", 0 - (height / 2))
+      .attr("y", 10 - margin.left + 40)
+      .attr("x", 20 - (height / 2))
       .attr("dy", "1em")
       .attr("class", "axisText")
       .text("Lacking Healthcare (%)");
