@@ -30,7 +30,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       data.healthcare = +data.healthcare;
     });
 
-console.log(healthData);
+// console.log(healthData);
 
     // Step 2: Create scale functions
     // ==============================
@@ -56,7 +56,7 @@ console.log(healthData);
     chartGroup.append("g")
       .call(leftAxis);
 
-    // Step 5: Create Circles
+    // Step 5a: Create Circles
     // ==============================
     var circlesGroup = chartGroup.selectAll("circle")
     .data(healthData)
@@ -70,18 +70,34 @@ console.log(healthData);
     // .append("text")
     // .text((d)=>(d.abbr));
 
-// append state abbreviation in circle chart
+ // Step 5b: ppend state abbreviation in circle chart
+    // ==============================
 
-svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatter-plot-circles/199386
-       .data(healthData)
-       .enter()
-       .append("text")
-       .text((d) => (d.abbr))
-       .attr("x", (d) => xLinearScale(d.poverty))
-       .attr("y", (d) => yLinearScale(d.healthcare));
+// svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatter-plot-circles/199386
+//        .data(healthData)
+//        .enter()
+//        .append("text")
+//        .text((d) => (d.abbr))
+//        .attr("x", (d) => xLinearScale(d.poverty))
+//        .attr("y", (d) => yLinearScale(d.healthcare));
       //  .offset([80, -60]);   
 
 
+    chartGroup.append("g").selectAll("text")
+      .data(healthData)
+      .enter()
+      .append("text")
+      .text(d => d.abbr)
+      .attr("x", d => xLinearScale(d.poverty))
+      .attr("y", d => yLinearScale(d.healthcare))
+      .attr("text-anchor", "middle")
+      .attr("alignment-baseline", "central")
+      .attr("font-size", "10px")
+      .attr("fill", "white")
+      .attr('fill-opacity', 5);
+      // .offset([80, -60])
+      // .on('mouseover', showDetail)
+      // .on('mouseout', hideDetail);
 
 
 
