@@ -29,8 +29,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       data.poverty = +data.poverty;
       data.healthcare = +data.healthcare;
     });
-
-// console.log(healthData);
+    // console.log(healthData);
 
     // Step 2: Create scale functions
     // ==============================
@@ -66,22 +65,18 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     .attr("cy", d => yLinearScale(d.healthcare))
     .attr("r", "15")
     .attr("fill", "blue")
-    .attr("opacity", ".5")
-    // .append("text")
-    // .text((d)=>(d.abbr));
+    .attr("opacity", ".5");
 
- // Step 5b: ppend state abbreviation in circle chart
+ // Step 5b: append state abbreviation in circle chart
     // ==============================
 
-// svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatter-plot-circles/199386
+//  svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatter-plot-circles/199386
 //        .data(healthData)
 //        .enter()
 //        .append("text")
 //        .text((d) => (d.abbr))
 //        .attr("x", (d) => xLinearScale(d.poverty))
 //        .attr("y", (d) => yLinearScale(d.healthcare));
-      //  .offset([80, -60]);   
-
 
     chartGroup.append("g").selectAll("text")
       .data(healthData)
@@ -95,11 +90,6 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       .attr("font-size", "10px")
       .attr("fill", "white")
       .attr('fill-opacity', 5);
-      // .offset([80, -60])
-      // .on('mouseover', showDetail)
-      // .on('mouseout', hideDetail);
-
-
 
     // Step 6: Initialize tool tip
     // ==============================
@@ -139,4 +129,5 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       .text("In Poverty (%)");
   }).catch(function(error) {
     console.log(error);
+
   });
