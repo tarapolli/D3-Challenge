@@ -91,6 +91,9 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       .attr("fill", "white")
       .attr('fill-opacity', 5);
 
+    //  https://stackoverflow.com/questions/55988709/how-can-i-add-labels-inside-the-points-in-a-scatterplot
+      
+
     // Step 6: Initialize tool tip
     // ==============================
     var toolTip = d3.tip()
