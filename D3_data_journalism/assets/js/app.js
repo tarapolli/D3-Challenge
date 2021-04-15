@@ -68,9 +68,9 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     .attr("opacity", ".5");
 
  // Step 5b: append state abbreviation in circle chart
-    // ==============================
+// ==============================
 
-//  svg.selectAll("text")     //https://forum.freecodecamp.org/t/add-labels-to-scatter-plot-circles/199386
+//  svg.selectAll("text")     
 //        .data(healthData)
 //        .enter()
 //        .append("text")
@@ -91,9 +91,6 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       .attr("fill", "white")
       .attr('fill-opacity', 5);
 
-    //  https://stackoverflow.com/questions/55988709/how-can-i-add-labels-inside-the-points-in-a-scatterplot
-      
-
     // Step 6: Initialize tool tip
     // ==============================
     var toolTip = d3.tip()
@@ -109,7 +106,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
 
     // Step 8: Create event listeners to display and hide the tooltip
     // ==============================
-    circlesGroup.on("click", function(data) {
+    circlesGroup.on("mouseover", function(data) {
       toolTip.show(data, this);
     })
       // onmouseout event
