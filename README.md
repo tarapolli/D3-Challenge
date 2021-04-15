@@ -1,1 +1,5 @@
-# D3-Challenge
+# D3-Challenge:  Data Journalism and D3
+
+Welcome to the newsroom! As a data visualization professional for a major metro paper, I was tasked with analyzing the current trends shaping people's lives. We will run a series of feature stories about the health risks facing particular demographics. I sifting through information from the U.S. Census Bureau and the Behavioral Risk Factor Surveillance System for the first story, "Correlations Discovered Between Lack of Healthcare Access and Poverty." The data set included with the assignment is based on 2014 ACS 1-year estimates from the US Census Bureau, but you are free to investigate a different data set. The Using a data set based on 2014 ACS 1-year estimates from the US Census Bureau, I utilized data based on rates of income, obesity, etc. by state. ("MOE" stands for "margin of error" in the data.)
+
+Please refer to this scatter plot between LACK OF HEALTHCARE and POVERTY data variables.  Each plot is labled with the state's abbreviation, and when you click on the bottom right side of the circle, data will appear showing the Poverty Level Percent (%) and Lacking Healtchare Percent (%). https://tarapolli.github.io/D3-Challenge/
